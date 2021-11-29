@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { Card, CardBody, CardGroup, CardHeader, Col, Container, Form, Input, InputGroup, Row } from 'reactstrap';
 import './getServices.css';
 
-import CreateResponse from '../Response/responseCreate'
-import { servicesVersion } from 'typescript';
+
+import CreateResponse from '../Response/responseCreate';
+import GetResponses from '../Response/getResponse';
+// import { servicesVersion } from 'typescript';
+import DeleteService from './deleteService';
 
 type Props = {
     updateToken: (newToken: string) => void
     sessionToken: string | null
-    
 }
 
 type State = {
@@ -70,7 +72,11 @@ class GetServices extends React.Component<Props, State>{
 
                     {/* <p>{service.id}</p> */}
 
-                    <p><CreateResponse  {...service.id} /></p>
+                    <p><CreateResponse id={service.id} updateToken={this.props.updateToken} sessionToken={this.props.sessionToken}/></p>
+
+                    <p><DeleteService id={service.id} updateToken={this.props.updateToken} sessionToken={this.props.sessionToken}/></p>
+
+                    <p><GetResponses updateToken={this.props.updateToken} sessionToken={this.props.sessionToken}/></p>
                 </ul>
                 </Card>
             )
@@ -88,6 +94,3 @@ class GetServices extends React.Component<Props, State>{
 
 }
 export default GetServices
-
-
-

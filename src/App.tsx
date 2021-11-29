@@ -2,13 +2,10 @@ import React from 'react';
 import RegisterUser from './components/Auth/auth';
 import LoginUser from './components/Login/login';
 import CreateService from './components/userprofile/serviceCreate';
-import CreateResponse from './components/Response/responseCreate';
 import GetServices from './components/userprofile/getServices';
-import GetUsers from './components/userprofile/getUsers';
 import './App.css';
-// import Sidebar from './components/Navbar';
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import Sidebar from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 type State = {
@@ -54,10 +51,15 @@ class App extends React.Component<{}, State>{
 
         <LoginUser updateToken={this.updateToken} updateLocalStorage={this.updateLocalStorage} />
 
-        <CreateService updateToken={this.updateToken} sessionToken={this.state.sessionToken} />
-        {/* <CreateResponse updateToken={this.updateToken} sessionToken={this.state.sessionToken} /> */}
-        <GetServices updateToken={this.updateToken} sessionToken={this.state.sessionToken} />
-        <GetUsers updateToken={this.updateToken} sessionToken={this.state.sessionToken} />
+        <Router>
+          <Sidebar />
+        </Router>
+
+        {/* <CreateService updateToken={this.updateToken} sessionToken={this.state.sessionToken} />
+
+        <GetServices updateToken={this.updateToken} sessionToken={this.state.sessionToken} /> */}
+
+
       </div>
     );
   }

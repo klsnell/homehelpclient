@@ -45,22 +45,22 @@ class Sidebar extends React.Component<{}, State>{
             <div className='sidebar'>
                 <div className='sidebarstyling'>
                     <ul>
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/auth'><button>Register</button></Link></li>
-                        <li><Link to='/login'><button>Login</button></Link></li>
+                        {/* <li><Link to='/'>Home</Link></li> */}
+                        {/* <li><Link to='/auth'><button>Register</button></Link></li>
+                        <li><Link to='/login'><button>Login</button></Link></li> */}
                         <li><Link to='/userprofile'><button>Account</button></Link></li>
+                        <li><Link to='/getservices'><button>Get Services</button></Link></li>
+
                     </ul>
                 </div>
                 <div className='sidebar-route'>
                     <Routes>
-                        <Route path='/home'></Route>
+                        <Route path='userprofile' element={<CreateService updateToken={this.updateToken} sessionToken={this.state.sessionToken} />}>
+                        </Route>
 
-                        {/* <Route path='/auth'><RegisterUser updateToken={this.updateToken} /></Route> */}
-
-                        {/* <Route path='/login'><LoginUser updateToken={this.updateToken} updateLocalStorage={this.updateLocalStorage} /></Route> */}
-
-                        <Route path='./userprofile'><CreateService updateToken={this.updateToken} sessionToken={this.state.sessionToken} /><GetServices updateToken={this.updateToken} sessionToken={this.state.sessionToken} />
-                            <GetUsers updateToken={this.updateToken} sessionToken={this.state.sessionToken} /></Route>
+                        <Route path='getservices' element={<GetServices updateToken={this.updateToken} sessionToken={this.state.sessionToken} />}>
+                        </Route>
+                        
                     </Routes>
                 </div>
             </div>

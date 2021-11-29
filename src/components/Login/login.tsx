@@ -46,10 +46,11 @@ class LoginUser extends React.Component<Props, State>{
                 console.log(data);
                 console.log(this.state.email);
                 this.props.updateToken(data.SessionToken)
-                // if (data.Status == 'Success')
-                // else
-                //     alert('failed')
-                //     console.log(Response);
+                if (data.Status === 'Success')
+                    alert('Logged in')
+                else
+                    alert('Welcome!')
+                    console.log(Response);
                     
             }).catch(err => console.log(err))
     }

@@ -42,7 +42,9 @@ class CreateResponse extends React.Component<Props, State>{
     createResponse(event: any){
         let tokenCarry = localStorage.getItem('token')
         event.preventDefault();
-        fetch(`http://localhost:7000/response/respond/${event.target.id}`,{
+        console.log(this.props.id)
+        console.log(`http://localhost:7000/response/respond/${this.props.id}`)
+        fetch(`http://localhost:7000/response/respond/${this.props.id}`,{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json',
@@ -61,6 +63,7 @@ class CreateResponse extends React.Component<Props, State>{
             console.log(this.state.reply)
         }).catch(err=> console.log(err))
     }
+
     render(){
         console.log()
         return(
@@ -72,12 +75,15 @@ class CreateResponse extends React.Component<Props, State>{
                                 <CardBody>
                                     <Form onSubmit={this.createResponse}>
                                         <div className='responddiv'><u>Respond to this request</u></div>
+
                                         <InputGroup className='respondbox'>
                                             <Input className='respondinput' type="text" onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ company: e.target.value }) }} value={this.state.company} placeholder="Company Name" />
                                         </InputGroup>
+
                                         <InputGroup className='respondbox'>
                                             <Input className='respondinput' type="text" onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ reply: e.target.value }) }} value={this.state.reply} placeholder="Your response here" />
                                         </InputGroup>
+
                                         <InputGroup className='respondbox'>
                                             <Input className='respondinput' type="number" onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ estimateTime: e.target.value }) }} value={this.state.estimateTime} placeholder="Estimate time(days)" />
                                         </InputGroup>

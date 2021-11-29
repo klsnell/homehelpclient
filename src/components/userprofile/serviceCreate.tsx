@@ -90,7 +90,7 @@ class CreateService extends React.Component<Props, State>{
                                         <InputGroup>
                                             <Input type="text" onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ picture: e.target.value }) }} value={this.state.picture} placeholder="Upload Picture" />
                                         </InputGroup>
-                                        <button type="submit">Create Service Request</button>
+                                        <button type="submit">Create New Service Request</button>
                                         {/* <CreateResponse updateToken={this.props.updateToken} sessionToken={this.props.sessionToken}/> */}
                                     </Form>
                                 </CardBody>
