@@ -1,0 +1,14 @@
+.servicecard{
+    border: 2px solid blue;
+    width:40%;
+    background-color:rgba(255, 248, 220, 0.527);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius:20%;
+    margin-top:10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p{
+    text-align: center;
+}

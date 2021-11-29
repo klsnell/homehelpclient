@@ -1,0 +1,21 @@
+
+Input{
+    background-color: rgb(251, 251, 251);
+    color:rgb(0, 0, 0);
+    border-color:blue;
+    border-style:inherit;
+    width:30%;
+}
+Input:hover{
+    background-color:lightskyblue;
+}
+button{
+    color:rgb(0, 0, 0);
+    background-color: rgb(240, 234, 217);
+    border-style:double;
+    border-color:blue;
+}
+button:hover{
+    background-color:cadetblue;
+    
+}
