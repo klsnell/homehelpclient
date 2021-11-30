@@ -1,14 +1,18 @@
 .servicecard{
     border: 2px solid blue;
     width:40%;
-    background-color:rgba(255, 248, 220, 0.527);
+    background-image:url(/src/assets/What-is-a-Drafting-Table-Used-For.jpg);
+    background-size:cover;
     margin-left: auto;
     margin-right: auto;
     border-radius:20%;
     margin-top:10px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    display:ruby-base-container;
 }
 
 p{
     text-align: center;
 }
+/* Fotolia_62503059_Subscription_Monthly_M.jpg */

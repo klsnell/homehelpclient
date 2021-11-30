@@ -3,10 +3,11 @@ import { Card, CardBody, CardGroup, CardHeader, Col, Container, Form, Input, Inp
 import './getServices.css';
 
 
-import CreateResponse from '../Response/responseCreate';
-import GetResponses from '../Response/getResponse';
+import CreateResponse from '../Response/ResponseCreate';
+import GetResponses from '../Response/GetResponse';
 // import { servicesVersion } from 'typescript';
-import DeleteService from './deleteService';
+import DeleteService from './DeleteService';
+import UpdateService from './UpdateService';
 
 type Props = {
     updateToken: (newToken: string) => void
@@ -23,7 +24,7 @@ interface iServices {
     serviceDescription: string,
     address: string,
     picture: string,
-    id: any
+    id: number
 }
 
 
@@ -75,6 +76,9 @@ class GetServices extends React.Component<Props, State>{
                     <p><CreateResponse id={service.id} updateToken={this.props.updateToken} sessionToken={this.props.sessionToken}/></p>
 
                     <p><DeleteService id={service.id} updateToken={this.props.updateToken} sessionToken={this.props.sessionToken}/></p>
+
+                    <p><UpdateService id={service.id} updateToken={this.props.updateToken} sessionToken={this.props.sessionToken}/></p>
+                    
 
                     <p><GetResponses updateToken={this.props.updateToken} sessionToken={this.props.sessionToken}/></p>
                 </ul>

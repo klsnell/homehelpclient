@@ -34,35 +34,35 @@ class RegisterUser extends React.Component<Props, State>{
     }
 
 
-    email(event: any) {
-        this.setState({ email: event.target.value })
-    }
+    // email(event: any) {
+    //     this.setState({ email: event.target.value })
+    // }
 
-    password(event: any) {
-        this.setState({ password: event.target.value })
-    }
+    // password(event: any) {
+    //     this.setState({ password: event.target.value })
+    // }
 
-    fName(event: any) {
-        this.setState({ fName: event.target.value })
-    }
+    // fName(event: any) {
+    //     this.setState({ fName: event.target.value })
+    // }
 
-    phoneNumber(event: any) {
-        this.setState({ phoneNumber: event.target.value })
-    }
+    // phoneNumber(event: any) {
+    //     this.setState({ phoneNumber: event.target.value })
+    // }
 
-    isUser(event: any) {
-        this.setState({ isUser: event.target.value })
-    }
+    // isUser(event: any) {
+    //     this.setState({ isUser: event.target.value })
+    // }
 
-    isContractor(event: any) {
-        this.setState({ isContractor: event.target.value })
-    }
+    // isContractor(event: any) {
+    //     this.setState({ isContractor: event.target.value })
+    // }
 
-    isAdmin(event: any) {
-        this.setState({ isAdmin: event.target.value })
-    }
+    // isAdmin(event: any) {
+    //     this.setState({ isAdmin: event.target.value })
+    // }
 
-    register(event: any) {
+    register(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
         fetch('http://localhost:7000/user/register', {
             method: 'POST',

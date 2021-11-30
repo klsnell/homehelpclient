@@ -1,6 +1,12 @@
 .App {
   text-align: center;
-  color:rgb(0, 0, 153);
+  color:rgb(5, 5, 90);
+  margin-top:5%;
+  border: 2px solid rgb(240, 235, 230);
+  background-color:rgba(245, 245, 245, 0.301);
+  margin-left:5%;
+  margin-right:5%;
+  
 }
 
 .App-logo {
@@ -38,9 +44,10 @@
   }
 }
 body{
-  background-image: url(./assets/bg01.jpg);
+  background-image: url(https://www.desktopbackground.org/p/2012/03/21/362133_blank-blueprint-paper_5000x3750_h.jpg);
   background-repeat: no-repeat;
   position:static;
+  background-size:cover;
 }
 
 h1{

@@ -22,14 +22,14 @@ class LoginUser extends React.Component<Props, State>{
         this.login = this.login.bind(this)
     }
 
-    email(event: any) {
-        this.setState({ email: event.target.value })
-    }
-    password(event: any) {
-        this.setState({ password: event.target.value })
-    }
+    // email(event: any) {
+    //     this.setState({ email: event.target.value })
+    // }
+    // password(event: any) {
+    //     this.setState({ password: event.target.value })
+    // }
 
-    login(event: any) {
+    login(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
         fetch('http://localhost:7000/user/login', {
             method: 'POST',

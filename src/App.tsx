@@ -1,8 +1,8 @@
 import React from 'react';
-import RegisterUser from './components/Auth/auth';
-import LoginUser from './components/Login/login';
-import CreateService from './components/userprofile/serviceCreate';
-import GetServices from './components/userprofile/getServices';
+import RegisterUser from './components/Auth/Auth';
+import LoginUser from './components/Login/Login';
+// import CreateService from './components/userprofile/serviceCreate';
+// import GetServices from './components/userprofile/getServices';
 import './App.css';
 import Sidebar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -40,20 +40,33 @@ class App extends React.Component<{}, State>{
     this.setState({ sessionToken: '' })
   };
 
-
+  // protectedViews = () => {
+  //   return localStorage.getItem('token') ? (
+      
+  //       <Router>
+  //         <Sidebar />
+  //       </Router>
+      
+  //   ) : (
+  //     <LoginUser updateToken={this.updateToken} updateLocalStorage={this.updateLocalStorage} />
+  //     // <RegisterUser updateToken={this.updateToken} />
+  //   )
+  // }
 
   render() {
     return (
       <div className="App">
         <h1><u><i>Home Owner Help App</i></u></h1>
 
+        {/* {this.protectedViews()} */}
+
         <RegisterUser updateToken={this.updateToken} />
 
         <LoginUser updateToken={this.updateToken} updateLocalStorage={this.updateLocalStorage} />
 
-        <Router>
-          <Sidebar />
-        </Router>
+         <Router>
+           <Sidebar />
+         </Router>
 
         {/* <CreateService updateToken={this.updateToken} sessionToken={this.state.sessionToken} />
 

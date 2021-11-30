@@ -1,11 +1,9 @@
 import React from 'react';
 import { Route, Link, Routes } from 'react-router-dom';
-import RegisterUser from './Auth/auth';
-import LoginUser from './Login/login';
-import CreateService from './userprofile/serviceCreate';
-import CreateResponse from './Response/responseCreate';
-import GetServices from './userprofile/getServices';
-import GetUsers from './userprofile/getUsers';
+import CreateService from './userprofile/ServiceCreate';
+import GetServices from './userprofile/GetServices';
+import './Navbar.css';
+
 
 
 type State = {
@@ -48,8 +46,9 @@ class Sidebar extends React.Component<{}, State>{
                         {/* <li><Link to='/'>Home</Link></li> */}
                         {/* <li><Link to='/auth'><button>Register</button></Link></li>
                         <li><Link to='/login'><button>Login</button></Link></li> */}
-                        <li><Link to='/userprofile'><button>Account</button></Link></li>
-                        <li><Link to='/getservices'><button>Get Services</button></Link></li>
+                        <Link to='/userprofile'><button className='linkbutton'>Start a Service Request</button></Link>
+                        <br/>
+                        <Link to='/getservices'><button className='linkbutton'>Get Your Service Requests</button></Link>
 
                     </ul>
                 </div>

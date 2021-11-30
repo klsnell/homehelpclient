@@ -1,0 +1,15 @@
+.sidebarstyling{
+    margin-left:auto;
+    margin-right:auto;
+}
+.linkbutton{
+    border-radius:20%;
+    border:3px solid blue;
+    position:relative;
+    margin-left:-3%;
+}
+.linkbutton:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}

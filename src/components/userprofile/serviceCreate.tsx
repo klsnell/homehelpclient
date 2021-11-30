@@ -1,5 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, Row } from 'reactstrap';
+// import { Route, Link, Routes } from 'react-router-dom';
+// import GetServices from './getServices';
 // import CreateResponse from '../Response/responseCreate';
 
 
@@ -16,7 +18,7 @@ type Props = {
 }
 
 class CreateService extends React.Component<Props, State>{
-    constructor(props: Props){
+    constructor(props: Props) {
         super(props)
 
         this.state = {
@@ -28,27 +30,28 @@ class CreateService extends React.Component<Props, State>{
         this.createService = this.createService.bind(this)
     }
 
-    serviceType(event: any){
-        this.setState({serviceType: event.target.value})
-    }
-    serviceDescription(event:any){
-        this.setState({serviceDescription: event.target.value})
-    }
-    address(event:any){
-        this.setState({address: event.target.value})
-    }
-    picture(event:any){
-        this.setState({picture: event.target.value})
-    }
+    // serviceType(event: any) {
+    //     this.setState({ serviceType: event.target.value })
+    // }
+    // serviceDescription(event: any) {
+    //     this.setState({ serviceDescription: event.target.value })
+    // }
+    // address(event: any) {
+    //     this.setState({ address: event.target.value })
+    // }
+    // picture(event: any) {
+    //     this.setState({ picture: event.target.value })
+    // }
 
-    createService(event:any){
+    createService(event: React.FormEvent<HTMLFormElement>) {
+        let tokenCarry = localStorage.getItem('token')
         event.preventDefault()
-        fetch('http://localhost:7000/services/create',{
+        fetch('http://localhost:7000/services/create', {
             method: 'POST',
-            headers:{
+            headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `${this.props.sessionToken}`
-                
+                'Authorization': `${tokenCarry}`
+
             },
             body: JSON.stringify({
                 serviceType: this.state.serviceType,
@@ -57,19 +60,19 @@ class CreateService extends React.Component<Props, State>{
                 picture: this.state.picture,
             })
         }).then((Response) => Response.json())
-        .then((data) => {
-            console.log(data);
-            console.log(this.state.serviceType)
-            // this.props.updateToken(data.SessionToken)
-            // if(data.Status == 'Success')
-            // else
-            //     alert('failed')
-            //     console.log(Response);
-        }).catch(err => console.log(err))
+            .then((data) => {
+                console.log(data);
+                console.log(this.state.serviceType)
+                // this.props.updateToken(data.SessionToken)
+                // if(data.Status == 'Success')
+                // else
+                //     alert('failed')
+                //     console.log(Response);
+            }).catch(err => console.log(err))
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 <Container>
                     <Row>
@@ -91,6 +94,15 @@ class CreateService extends React.Component<Props, State>{
                                             <Input type="text" onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ picture: e.target.value }) }} value={this.state.picture} placeholder="Upload Picture" />
                                         </InputGroup>
                                         <button type="submit">Create New Service Request</button>
+                                        {/* <Link to='/getservices'><button className='linkbutton'>Get Services</button></Link>
+                                        <div>
+                                            <Routes>
+                                            <Route path='getservices' element={<GetServices updateToken={this.props.updateToken} sessionToken={this.props.sessionToken} />}>
+                                            </Route>
+                                            </Routes>
+                                        </div> */}
+
+
                                         {/* <CreateResponse updateToken={this.props.updateToken} sessionToken={this.props.sessionToken}/> */}
                                     </Form>
                                 </CardBody>

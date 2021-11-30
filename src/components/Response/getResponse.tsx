@@ -15,7 +15,7 @@ interface iResponses {
     company: string,
     reply: string,
     estimateTime: number | string
-    id: any
+    id: number
 }
 
 class GetResponses extends React.Component<Props, State>{

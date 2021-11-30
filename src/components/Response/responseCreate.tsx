@@ -12,7 +12,7 @@ type State = {
 type Props = {
     updateToken: (newToken: string) => void
     sessionToken: string | null
-    id: any
+    id: number
 }
 
 class CreateResponse extends React.Component<Props, State>{
@@ -27,19 +27,19 @@ class CreateResponse extends React.Component<Props, State>{
         this.createResponse = this.createResponse.bind(this)
     }
 
-    company(event: any){
-        this.setState({company: event.target.value})
-    }
+    // company(event: any){
+    //     this.setState({company: event.target.value})
+    // }
 
-    reply(event: any){
-        this.setState({reply: event.target.value})
-    }
+    // reply(event: any){
+    //     this.setState({reply: event.target.value})
+    // }
 
-    estimateTime(event: any){
-        this.setState({estimateTime: event.target.value})
-    }
+    // estimateTime(event: any){
+    //     this.setState({estimateTime: event.target.value})
+    // }
 
-    createResponse(event: any){
+    createResponse(event: React.FormEvent<HTMLFormElement>){
         let tokenCarry = localStorage.getItem('token')
         event.preventDefault();
         console.log(this.props.id)

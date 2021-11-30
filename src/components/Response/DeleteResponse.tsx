@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 type Props ={
     updateToken: (newToken: string) => void
     sessionToken: string | null
-    id: any
+    id: number
 }
 
 class DeleteResponse extends React.Component<Props>{
