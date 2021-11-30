@@ -1,11 +1,13 @@
 import React from 'react';
-import RegisterUser from './components/Auth/Auth';
-import LoginUser from './components/Login/Login';
+// import RegisterUser from './components/Auth/Auth';
+// import LoginUser from './components/Login/Login';
 // import CreateService from './components/userprofile/serviceCreate';
 // import GetServices from './components/userprofile/getServices';
 import './App.css';
 import Sidebar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import RegisterUser from './components/Auth/Auth';
+import LoginUser from './components/Login/Login';
 
 
 type State = {
