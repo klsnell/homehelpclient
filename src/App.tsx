@@ -6,8 +6,8 @@ import React from 'react';
 import './App.css';
 import Sidebar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import RegisterUser from './components/Auth/Auth';
-import LoginUser from './components/Login/Login';
+import RegisterUser from './components/Auth/auth';
+import LoginUser from './components/Login/login';
 
 
 type State = {

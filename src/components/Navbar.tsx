@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Link, Routes } from 'react-router-dom';
-import CreateService from './userprofile/ServiceCreate';
-import GetServices from './userprofile/GetServices';
+import CreateService from './userprofile/serviceCreate';
+import GetServices from './userprofile/getServices';
 import './Navbar.css';
 
 
