@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Card} from 'reactstrap';
 import DeleteResponse from './DeleteResponse';
+import UpdateResponse from './UpdateResponse';
 
 type Props = {
     updateToken: (newToken: string) => void
@@ -57,6 +58,7 @@ class GetResponses extends React.Component<Props, State>{
                         <p>{respond.reply}</p>
                         <p>{respond.estimateTime}</p>
                         <p><DeleteResponse id={respond.id} updateToken={this.props.updateToken} sessionToken={this.props.sessionToken}/></p>
+                        <p><UpdateResponse id={respond.id} updateToken={this.props.updateToken} sessionToken={this.props.sessionToken}/></p>
                     </ul>
                     <button>Select This Company</button>
                 </Card>
