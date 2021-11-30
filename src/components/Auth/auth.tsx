@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Card, CardFooter, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupText, Row } from 'reactstrap';
 import './auth.css'
+import APIURL from '../../helpers/environment';
 
 
 type State = {
@@ -64,7 +65,7 @@ class RegisterUser extends React.Component<Props, State>{
 
     register(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
-        fetch('http://localhost:7000/user/register', {
+        fetch(`${APIURL}/user/register`, {
             method: 'POST',
             headers: {
                 // 'Accept': 'application/json',

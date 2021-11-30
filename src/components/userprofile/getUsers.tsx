@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import APIURL from '../../helpers/environment';
 
 type Props = {
     updateToken: (newToken: string) => void
@@ -33,7 +34,7 @@ class GetUsers extends React.Component<Props, State>{
 
     getUsers(event: any){
         event.preventDefault()
-        fetch('http://localhost:7000/user/userinfo', {
+        fetch(`${APIURL}/user/userinfo`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

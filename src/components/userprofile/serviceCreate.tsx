@@ -3,6 +3,7 @@ import { Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, Row
 // import { Route, Link, Routes } from 'react-router-dom';
 // import GetServices from './getServices';
 // import CreateResponse from '../Response/responseCreate';
+import APIURL from '../../helpers/environment';
 
 
 type State = {
@@ -46,7 +47,7 @@ class CreateService extends React.Component<Props, State>{
     createService(event: React.FormEvent<HTMLFormElement>) {
         let tokenCarry = localStorage.getItem('token')
         event.preventDefault()
-        fetch('http://localhost:7000/services/create', {
+        fetch(`${APIURL}/services/create`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

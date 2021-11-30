@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardBody, CardGroup, CardHeader, Col, Container, Form, Input, InputGroup, Row } from 'reactstrap';
 import './getServices.css';
 
-
+import APIURL from '../../helpers/environment';
 import CreateResponse from '../Response/ResponseCreate';
 import GetResponses from '../Response/GetResponse';
 // import { servicesVersion } from 'typescript';
@@ -42,7 +42,7 @@ class GetServices extends React.Component<Props, State>{
     getServices(event: any) {
         let tokenCarry = localStorage.getItem('token')
         event.preventDefault()
-        fetch('http://localhost:7000/services/mine', {
+        fetch(`${APIURL}/services/mine`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

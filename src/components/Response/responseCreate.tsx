@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, Row } from 'reactstrap';
 import './response.css';
+import APIURL from '../../helpers/environment';
 
 
 type State = {
@@ -44,7 +45,7 @@ class CreateResponse extends React.Component<Props, State>{
         event.preventDefault();
         console.log(this.props.id)
         console.log(`http://localhost:7000/response/respond/${this.props.id}`)
-        fetch(`http://localhost:7000/response/respond/${this.props.id}`,{
+        fetch(`${APIURL}/response/respond/${this.props.id}`,{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json',

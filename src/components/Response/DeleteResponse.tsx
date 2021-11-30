@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import APIURL from '../../helpers/environment';
 
 type Props ={
     updateToken: (newToken: string) => void
@@ -17,7 +18,7 @@ class DeleteResponse extends React.Component<Props>{
     deleteResponse(event: any){
         let tokenCarry = localStorage.getItem('token')
         event.preventDefault();
-        fetch(`http://localhost:7000/response/deleteresponse/${this.props.id}`, {
+        fetch(`${APIURL}/response/deleteresponse/${this.props.id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Label, Input, InputGroup, Button } from 'reactstrap'
+import APIURL from '../../helpers/environment';
+
 
 type Props = {
     updateToken: (newToken: string) => void
@@ -31,7 +33,7 @@ class UpdateResponse extends React.Component<Props, State>{
     updateResponse(event: any) {
         let tokenCarry = localStorage.getItem('token')
         event.preventDefault();
-        fetch(`http://localhost:7000/response/updateresponse/${this.props.id}`, {
+        fetch(`${APIURL}/response/updateresponse/${this.props.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Card} from 'reactstrap';
 import DeleteResponse from './DeleteResponse';
 import UpdateResponse from './UpdateResponse';
+import APIURL from '../../helpers/environment';
 
 type Props = {
     updateToken: (newToken: string) => void
@@ -33,7 +34,7 @@ class GetResponses extends React.Component<Props, State>{
     getResponses(event:any){
         let tokenCarry = localStorage.getItem('token')
         event.preventDefault()
-        fetch('http://localhost:7000/response/myresponses', {
+        fetch(`${APIURL}/response/myresponses`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

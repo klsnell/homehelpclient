@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import APIURL from '../../helpers/environment';
 
 type Props = {
     updateToken: (newToken: string) => void
@@ -21,7 +22,7 @@ class DeleteService extends React.Component<Props>{
     deleteService(event: any) {
         let tokenCarry = localStorage.getItem('token')
         event.preventDefault();
-        fetch(`http://localhost:7000/services/delete/${this.props.id}`, {
+        fetch(`${APIURL}/services/delete/${this.props.id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

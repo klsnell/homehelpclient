@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, Row } from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
 type State = {
     email: string,
@@ -31,7 +32,7 @@ class LoginUser extends React.Component<Props, State>{
 
     login(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
-        fetch('http://localhost:7000/user/login', {
+    fetch(`${APIURL}/user/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
